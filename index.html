@@ -19,6 +19,7 @@
         font-family: Arial, sans-serif;
         text-align: center;
         backdrop-filter: brightness(0.6);
+        transition: background 1.5s ease-in-out; /* 🌈 Added fade transition */
     }
 
     #lyrics {
@@ -111,7 +112,7 @@
 const lyrics = [
   { time: 0.000,   text: "Eto tayo" },
   { time: 4.200,   text: "Ngunit sa huli, palagi" },
-  { time: 11.500,   text: "Babalik pa rin sa yakap mo" },
+  { time: 11.500,  text: "Babalik pa rin sa yakap mo" },
   { time: 16.000,  text: "Hanggang sa huli, palagi" },
   { time: 23.500,  text: "Pipiliin kong maging sa ’yo" },
   { time: 27.000,  text: "Ulit-ulitin man" },
@@ -128,6 +129,11 @@ function playSong() {
     // 🔹 Hide the button after clicking
     playButton.style.display = 'none';
 
+    // 🔹 Change the background (example: to 3.gif)
+    document.body.style.background = "url('3.gif') no-repeat center center fixed";
+    document.body.style.backgroundSize = "cover";
+
+    // 🔹 Play song
     audio.play();
     let currentLine = 0;
 
@@ -159,6 +165,7 @@ function playSong() {
     highlightLine();
 }
 </script>
+
 
 </body>
 </html>
